@@ -1,15 +1,28 @@
 import './style.scss'
 import {
     Fragment,
+    useEffect,
     useState
 } from 'react';
 import SaleCarousel from './SaleCarousel/SaleCarousel';
 import Filter from './Filter/Filter';
-import artworks from '../../../data/artworks.json';
+// import artworks from '../../../data/artworks.json';
 import mediaQuery from './MediaQuery/MediaQuery';
+import axios from 'axios';
 
 function LastSale() {
-    const [filteredArtworks, setFilteredArtworks] = useState([...artworks]);
+    // const [filteredArtworks, setFilteredArtworks] = useState([...artworks]);
+    // const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
+
+    // const setArtworks = (Artworks) => {
+    //     setFilteredArtworks(Artworks);
+    // };
+
+    // const setAvailable = (isAvailable) => {
+    //     setIsAvailableArtworks(isAvailable);
+    // };
+
+    const [filteredArtworks, setFilteredArtworks] = useState([]);
     const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
 
     const setArtworks = (Artworks) => {
@@ -19,6 +32,29 @@ function LastSale() {
     const setAvailable = (isAvailable) => {
         setIsAvailableArtworks(isAvailable);
     };
+
+    useEffect(() => {
+        async function fetchArtwokrs() {
+            try {
+                const config = {
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                };
+                const response = await axios.post('http://localhost:5000/owner', {
+                    pubKey: "356UHUNCRzR9mN2jDFwUTaopjdUcaFP6owtybMkuHWFo"
+                    },
+                    config
+                )
+                console.log(response.data.data);
+                
+                setFilteredArtworks(response.data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchArtwokrs();
+    },[]);
 
     return (
         <Fragment >
