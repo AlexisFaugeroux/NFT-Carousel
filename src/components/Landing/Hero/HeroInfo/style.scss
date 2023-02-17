@@ -1,0 +1,119 @@
+@use 'src/styles/vars' as v;
+
+.hero_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem 0rem;
+
+    &-title {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        font-size: 2.70rem;
+        text-align: center;
+        font-weight: 600;
+        line-height: 4.5rem;
+
+        @media screen and (min-width: 992px) {
+            font-size: 4rem;
+        }
+
+        strong {
+            font-weight: 700;
+            -webkit-text-stroke: 1px v.$first-color;
+            color: transparent;
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        @media screen and (min-width: 992px) {
+            flex-direction: row;
+        }
+
+        button {
+            border-radius: 10px;
+            padding: 1rem;
+            font-size: 1.3rem;
+            transition: all 0.9s ease 0s;
+        }
+
+        &-mint {
+            background-color: v.$first-color;
+            color: v.$third-color;
+            border: 0px;
+            font-weight: 700;
+            box-shadow: 2px 4px 2px v.$first-color;
+            transition: all 0.5s ease 0s;
+            &:hover {
+                color: v.$first-color;
+                box-shadow: v.$third-color 1px 1px 80px 2px;
+                background: v.$third-color repeat scroll 0% 0%;
+                transition: all 0.5s ease 0s;
+            }
+        }
+
+        &-show {
+            background-color: v.$third-color;
+            color: v.$first-color;
+            border: 2px solid v.$second-color;
+            font-weight: 700;
+            transition: all 0.5s ease 0s;
+            &:hover {
+                color: v.$first-color;
+                box-shadow: v.$third-color 1px 1px 80px 2px;
+                background: v.$second-color repeat scroll 0% 0%;
+                transition: all 0.5s ease 0s;
+                border: 2px solid v.$first-color;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .hero_info {
+        padding: 2rem 0rem;
+        &-title {
+            padding: 2rem 0;
+            font-size: 3.2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hero_info {
+        &-title {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hero_info {
+        width: 45%;
+        padding: 2rem 0 2rem 2rem;
+        &-title {
+            font-size: 5rem;
+            line-height: 6rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .hero_info {
+        width: 45%;
+        padding: 2rem 0 2rem 2rem;
+        &-title {
+            font-size: 5.75rem;
+            line-height: 7rem;
+        }
+    }
+}

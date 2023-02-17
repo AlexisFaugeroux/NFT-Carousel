@@ -1,0 +1,167 @@
+@use 'src/styles/vars' as v;
+
+.hero_carousel_container-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.8s;
+    width: 250px;
+    height: 250px;
+    border-radius: 1rem;
+    box-shadow: 2px 4px 8px #585858;
+
+    img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .hero_carousel_container-item {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero_carousel_container-item {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .hero_carousel_container-item {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .hero_carousel_container-item {
+        position: relative;
+        width: 23rem;
+        height: 28rem;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background: v.$fourth-color;
+        border: 1px solid v.$first-color;
+        transform: rotate3d(2, -5, -1, -15deg);
+        border-radius: 10px;
+        transition: transform 1s, box-shadow 1s;
+        padding: 0 8%;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: v.$third-color 1px 1px 80px 2px;
+            transform: rotate3d(2, -5, -1, 0deg);
+            transition: transform 0.8s, box-shadow 1s;
+        }
+
+        &-artwork {
+            margin-top: -20px;
+            border-radius: 15px;
+            margin-top: -20%;
+            align-self: center;
+            box-shadow: 2px 4px 8px #585858;
+            transition: transform 1.5s;
+            border: 2px solid v.$first-color;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 1s;
+                cursor: pointer;
+            }
+        }
+
+        &_infos {
+            width: 100%;
+            color: v.$first-color;
+
+            &_upper {
+                display: flex;
+                font-size: 1.2rem;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                align-items: center;
+                padding: 10% 0 5%;
+                border-bottom: 2px solid #acacac45;
+
+                &-id {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+            }
+
+            &_lower {
+                display: flex;
+                justify-content: space-between;
+                padding: 4% 0 6%;
+                color: v.$first-color;
+
+                &-prices {
+                    display: flex;
+                    flex-direction: column;
+
+                    &-text {
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        text-align: left;
+                    }
+
+                    &-crypto {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-size: 2rem;
+                        color: v.$first-color;
+                        font-weight: 600;
+                    }
+
+                    &-currency {
+                        color: v.$first-color;
+                        font-weight: 700;
+                    }
+                }
+
+                &-market {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    &-text {
+                        font-size: 1.2rem;
+                        text-align: right;
+                        font-weight: 400;
+                    }
+                }
+
+                .solana-logo {
+                    width: 2rem;
+                    height: 3rem;
+                    filter: grayscale(1);
+                }
+
+                button {
+                    font-size: 0.9rem;
+                    color: v.$third-color;
+                    box-shadow: 2px 4px 6px v.$first-color;
+                    background: v.$first-color repeat scroll 0% 0%;
+                    transition: all 0.5s ease 0s;
+                    border: 2px solid v.$first-color;
+                    font-weight: 900;
+                    border-radius: 10px;
+                    margin: 10% 0;
+                    padding: 0.5rem;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+

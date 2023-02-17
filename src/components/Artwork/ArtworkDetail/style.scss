@@ -1,0 +1,651 @@
+@use 'src/styles/vars' as v;
+
+.artwork_informations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_background {
+        position: absolute;
+        top: 25vh;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        overflow: hidden;
+        text-transform: uppercase;
+        font-weight: 900;
+        -webkit-text-stroke: 0.2rem v.$fourth-color;
+        color: transparent;
+        z-index: 1;
+    }
+
+    &--prev-btn {
+        font-size: 1rem;
+        background-color: v.$fourth-color;
+        padding: 1.5rem;
+        border: 2px solid v.$second-color;
+        border-radius: 100%;
+        color: v.$first-color;
+        cursor: pointer;
+        transition: all .2s;
+        transform: rotate3d(2, -5, -1, -30deg);
+        box-shadow: 10px 5px 3px #585858;
+        margin: 25rem 2rem 0 2rem;
+        z-index: 2;
+
+        &:hover {
+            box-shadow: 0px 0px 0px #58585800;
+            transform: rotate3d(2, -5, -1, 0deg);
+            transition: 0.5s;
+        }
+
+        &:active {
+            transform: scale(0.9);
+            transition: 0.1s;
+        }
+    }
+
+    &--next-btn {
+        font-size: 1rem;
+        background-color: v.$fourth-color;
+        padding: 1.5rem;
+        border: 2px solid v.$second-color;
+        border-radius: 100%;
+        color: v.$first-color;
+        cursor: pointer;
+        transition: all .2s;
+        transform: rotate3d(2, -5, -1, -30deg);
+        box-shadow: 10px 5px 3px #585858;
+        margin: 25rem 2rem 0 2rem;
+        z-index: 4;
+
+        &:hover {
+            box-shadow: 0px 0px 0px #58585800;
+            transform: rotate3d(2, -5, -1, 0deg);
+            transition: 0.5s;
+        }
+
+        &:active {
+            transform: scale(0.9);
+            transition: 0.1s;
+        }
+    }
+
+    .artwork {
+        background-color: v.$second-color;
+        width: 70%;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+        border: 4px solid v.$fourth-color;
+        position: relative;
+        z-index: 3;
+
+        // LEFT SIDE
+        &_title {
+            display: flex;
+            margin-top: -5rem !important;
+            z-index: 2;
+            font-size: 5rem;
+            font-weight: 900;
+            -webkit-text-stroke: 0.15rem v.$first-color;
+            color: transparent;
+            background-color: v.$fourth-color;
+            padding: 1rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+
+            &_image {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                width: 50%;
+
+                &-img {
+                    width: 90%;
+
+                    img {
+                        border-radius: 1rem;
+                        width: 100%;
+                    }
+                }
+
+                &_buttons {
+                    border: 1px dashed v.$fourth-color;
+                    border-radius: 0.5rem;
+                    display: flex;
+                    width: 100%;
+                    margin: 1rem;
+                    padding: 1.5rem 2rem;
+                    gap: 3rem;
+                    justify-content: center;
+
+                    &-bid {
+                        padding: 1rem 2rem;
+                        font-size: 1.4rem;
+                        font-weight: 800;
+                        background-color: v.$fourth-color;
+                        color: v.$first-color;
+                        border-radius: 0.5rem;
+                        border: 2px solid v.$second-color;
+                        transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                            transform 0.9s ease 0s;
+
+                        &:hover {
+                            color: v.$first-color;
+                            border: 2px solid v.$first-color;
+                            box-shadow: v.$third-color 1px 1px 30px 2px;
+                            background: v.$fourth-color repeat scroll 0% 0%;
+                            border: 2px dashed v.$first-color;
+                            transform: scale(1.1);
+                            transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                                transform 0.9s ease 0s;
+                        }
+                    }
+
+                    &-buy {
+                        background-color: v.$first-color;
+                        color: v.$fourth-color;
+                        font-size: 1.4rem;
+                        font-weight: 800;
+                        padding: 1rem 2rem;
+                        border-radius: 0.5rem;
+                        border: 2px solid v.$first-color;
+                        transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                            transform 0.9s ease 0s;
+
+                        &:hover {
+                            border: 2px solid v.$first-color;
+                            box-shadow: v.$third-color 1px 1px 30px 2px;
+                            background: v.$first-color repeat scroll 0% 0%;
+                            border: 2px dotted v.$fourth-color;
+                            transform: scale(1.1);
+                            transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                                transform 0.9s ease 0s;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        // RIGHT SIDE
+        &_detail {
+            width: 50%;
+            padding: 0 2rem;
+
+            &_content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding-top: 1rem;
+
+                &>* {
+                    border: 0.2rem solid v.$fourth-color;
+                    border-radius: 1.2rem;
+                }
+
+                .artwork_infos {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.3rem;
+                    width: 100%;
+                    text-transform: uppercase;
+                    background-color: v.$fourth-color;
+
+                    &-artist {
+                        padding: 0.5rem;
+                        width: 45%;
+                        font-size: 2rem;
+                        font-weight: 300;
+                        color: v.$third-color;
+                        text-transform: uppercase;
+                        background-color: v.$second-color;
+                        border-radius: 1.1rem 0 0 1.1rem;
+                        transition: color 0.5s ease 0s;
+
+                        &:hover {
+                            transition: color 0.5s ease 0s;
+                            color: v.$first-color;
+                        }
+                    }
+
+                    &-collection {
+                        background-color: v.$fourth-color;
+                        width: 55%;
+                        padding: 0.5rem;
+                        font-size: 2rem;
+                        font-weight: 900;
+                        color: v.$second-color;
+                        text-transform: uppercase;
+                        border-radius: 1.2rem;
+                        transition: color 0.5s ease 0s;
+
+                        &:hover {
+                            transition: color 0.5s ease 0s;
+                            color: v.$first-color;
+                        }
+                    }
+                }
+
+                .artwork_scope {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 1rem 2rem;
+                    background-color: v.$fourth-color;
+                    font-weight: 900;
+
+                    &_prices {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4rem;
+                        background-color: v.$fourth-color;
+                        font-weight: 900;
+
+                        .solana-logo {
+                            width: 1.75rem;
+                            height: 2.75rem;
+                            filter: grayscale(1);
+                        }
+
+                        &-crypto {
+                            color: v.$second-color;
+                            font-size: 1.75rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                        }
+
+                        &-currency {
+                            font-size: 1.3rem;
+                            font-weight: 800;
+                            color: v.$first-color;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    &_social{
+                        display: flex;
+                        gap: 0.2rem;
+                    }
+                }
+
+                .artwork_description {
+                    background-color: v.$fourth-color;
+                    padding: 1rem 2rem;
+
+                    &-title {
+                        -webkit-text-stroke: 0.1rem v.$first-color;
+                        color: transparent;
+                        font-weight: 900;
+                        padding-bottom: 0.8rem;
+                        font-size: 2.4rem;
+                        border-bottom: 2px solid v.$second-color;
+                        
+                    }
+
+                    &-content {
+                        color: v.$second-color;
+                        font-weight: 600;
+                        padding-top: 1rem;
+                        font-size: 1.3rem;
+                        line-height: 1.4rem;
+                        text-align: justify;
+                    }
+                }
+
+                .artwork_attributes {
+                    background-color: v.$fourth-color;
+                    padding: 1rem 2rem;
+
+                    &-title {
+                        -webkit-text-stroke: 0.1rem v.$first-color;
+                        color: transparent;
+                        font-weight: 900;
+                        padding-bottom: 0.8rem;
+                        font-size: 2.4rem;
+                        border-bottom: 2px solid v.$second-color;
+                    }
+
+                    &_wrapper {
+                        padding: 1.75rem 0rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        gap: 1rem;
+                    }
+
+                    .attribute {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        align-items: center;
+                        background-color: v.$second-color;
+                        padding: 0.5rem 1.25rem;
+                        border-radius: 9px;
+
+                        &-name {
+                            font-weight: 800;
+                            font-size: 1.1rem;
+                            color: var(--first-color);
+                        }
+
+                        &-value {
+                            color: v.$fourth-color;
+                            font-size: 1.05rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1650px) {
+    .artwork_informations {
+        .artwork {
+            width: 80%;
+
+            &_wrapper {
+                &_image {
+                    &_buttons {
+                        &-bid {
+                            padding: 1rem 1.5rem;
+                            font-size: 1.2rem;
+                        }
+
+                        &-buy {
+                            padding: 1rem 1.5rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1450px) {
+    .artwork_informations {
+        .artwork {
+            &_wrapper {
+                &_image {
+                    &_buttons {
+                        &-bid {
+                            padding: 1rem 1rem;
+                            font-size: 1.2rem;
+                        }
+
+                        &-buy {
+                            padding: 1rem 1rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 1350px) {
+    .artwork_informations {
+        .artwork {
+            width: 90%;
+
+            &_wrapper {
+                &_image {
+                    &-img {
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    &_buttons {
+                        padding: 1rem 1.5rem;
+
+                        &-bid {
+                            padding: 1rem 0.5rem;
+                            font-size: 1.1rem;
+                        }
+
+                        &-buy {
+                            padding: 1rem 0.5rem;
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1199px) {
+    .artwork_informations {
+        padding-top: 20vh;
+
+        &_background {
+            display: none;
+        }
+
+        .artwork {
+            &_title {
+                font-size: 4.5rem;
+            }
+            &_wrapper {
+                display: flex;
+                flex-direction: column;
+                &_image {
+                    width: 100%;
+                    &-img {
+                        width: 70%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    &_buttons {
+                        padding: 1.5rem 2rem;
+                        &-bid {
+                            padding: 1.2rem 2rem;
+                            font-size: 1.4rem;
+                        }
+
+                        &-buy {
+                            padding: 1.2rem 2rem;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+
+            &_detail {
+                width: 100%;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 892px) {
+    .artwork_informations {
+        .artwork {
+            &_title {
+                -webkit-text-stroke: 0.1rem #2c2a2b;
+                font-size: 3.5rem;
+            }
+            &_wrapper {
+                &_image {
+                    padding: 1rem 2rem 0rem;
+
+                    &_buttons {
+                        padding: 1rem 1.5rem;
+
+                        &-bid {
+                            padding: 1rem 1.8rem;
+                            font-size: 1.2rem;
+                        }
+
+                        &-buy {
+                            padding: 1rem 1.8rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+
+            &_detail {
+                width: 100%;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .artwork_informations {
+        &--prev-btn {
+            display: none;
+        }
+
+        &--next-btn {
+            display: none;
+        }
+        .artwork {
+            width: 100%;
+            border: none;
+            padding: 1rem 0;
+
+            &_detail {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .artwork_informations {
+        .artwork {
+            width: 100%;
+
+            &_title {
+                font-size: 3rem;
+            }
+
+            &_wrapper {
+                width: 100%;
+
+                &_image {
+                    &_buttons {
+                        gap: 1rem;
+
+                        &-bid {
+                            padding: 1rem 1.5rem;
+                            font-size: 1.2rem;
+                        }
+
+                        &-buy {
+                            padding: 1rem 1.5rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+
+            &_detail {
+                width: 100%;
+
+                &_content {
+                    &>* {
+                        border-radius: 1.2rem;
+                    }
+
+
+
+                    .artwork_infos {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.3rem;
+                        width: 100%;
+                        text-transform: uppercase;
+
+
+                        &-collection {
+                            font-size: 1.5rem;
+                            border-top-right-radius: 1.2rem;
+                            border-bottom-right-radius: 1.2rem;
+                        }
+
+                        &-artist {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .artwork_scope {
+                        padding: 0.5rem 1rem;
+                        
+                        &_social{
+                            flex-direction: column;
+                        }
+
+                        &_prices {
+                            &-crypto {
+                            font-size: 1.75rem;
+                            }
+                        } 
+                    }
+
+                    .artwork_description {
+                        padding: 1rem 1rem;
+                        &-title {
+                            font-size: 2rem;
+                        }
+                        &-content {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    .artwork_attributes {
+                        padding: 1rem 1rem;
+                        &-title {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+                
+
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .artwork_informations {
+        .artwork {
+            width: 100%;
+
+            &_title {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use 'vars' as v;
+@use 'reset';
+
+html {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+    background: v.$third-color;
+    font-family: 'Fira Sans';
+    color: v.$first-color;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+::selection {
+    background-color: hsl(15, 4%, 80%);
+    opacity: 0.2;
+}
+
+#root {
+    height: 100%;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+body::-webkit-scrollbar {
+    width: 30px; /* width of the entire scrollbar */
+    scroll-behavior: smooth;
+  }
+  
+body::-webkit-scrollbar-track {
+    background: v.$second-color; /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: v.$third-color; /* color of the scroll thumb */
+    border-radius: 30px; /* roundness of the scroll thumb */
+    border: 8px solid v.$second-color; /* creates padding around scroll thumb */
+}

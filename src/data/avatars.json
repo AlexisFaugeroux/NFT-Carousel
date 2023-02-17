@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "image" : "avatar1.png"
+    },
+    {
+        "id": 2,
+        "image" : "avatar2.png"
+    },
+    {
+        "id": 3,
+        "image" : "avatar3.png"
+    },
+    {
+        "id": 4,
+        "image" : "avatar4.png"
+    },
+    {
+        "id": 6,
+        "image" : "avatar6.png"
+    },
+    {
+        "id": 7,
+        "image" : "avatar7.png"
+    },
+    {
+        "id": 8,
+        "image" : "avatar8.png"
+    },
+    {
+        "id": 9,
+        "image" : "avatar9.png"
+    },
+    {
+        "id": 10,
+        "image" : "avatar10.png"
+    }
+]

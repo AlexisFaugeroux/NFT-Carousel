@@ -1,0 +1,25 @@
+@use 'src/styles/vars' as v;
+
+.artwork_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 0;
+    background-color: v.$third-color;
+    position: relative;
+    gap: 6rem;
+}
+
+.loader-wrapper {
+    &-text {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .loader-wrapper{
+        padding-top: 7vh;
+    }
+}

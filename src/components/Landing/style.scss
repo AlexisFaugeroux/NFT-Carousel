@@ -1,0 +1,14 @@
+@use 'src/styles/vars' as v;
+
+.main {
+    background: v.$body-color;
+    font-family: 'Fira Sans';
+    color: v.$first-color;
+    margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        padding: 0;
+    }  
+}

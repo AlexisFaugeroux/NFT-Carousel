@@ -1,0 +1,161 @@
+@use 'src/styles/vars'as v;
+
+.hero_carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+    &_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 2rem;
+        height: 100%;
+        width: 100vw;
+        
+        .prev-item {
+            position: absolute;
+            transform: scale(0.8) translateX(65px) rotate3d(2, -5, -1, -15deg);
+            opacity: 0.8;
+            filter: grayscale(0.25);
+        }
+        .active-item {
+            position: relative;
+            opacity: 1;
+            z-index: 2;
+            transform: rotate3d(2, -5, -1, -15deg);
+            &:hover {
+                cursor: pointer;
+                box-shadow: v.$third-color 1px 1px 80px 2px;
+                transform: rotate3d(2, -5, -1, 0deg);
+                transition: 0.8s;
+            }
+        }
+        .next-item {
+            opacity: 0.8;
+            position: absolute;
+            transform: scale(0.8) translateX(-65px) rotate3d(2, -5, -1, -15deg);
+            filter: grayscale(0.25);
+        }
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1.5rem 0 0.5rem;
+        &-next {
+            font-size: 1rem;
+            background: v.$third-color;
+            padding: 1.5rem;
+            border: 2px solid v.$second-color;
+            border-radius: 100%;
+            color: v.$first-color;
+            cursor: pointer;
+            transition: all .2s;
+            transform: rotate3d(2, -5, -1, -30deg);
+            box-shadow: 10px 5px 3px #585858;
+            &:hover {
+                box-shadow: 0px 0px 0px #58585800;
+                transform: rotate3d(2, -5, -1, 0deg);
+                transition: 0.5s;
+            }
+            &:active {
+                transform: scale(0.9);
+                transition: 0.1s;
+            }
+        }
+
+        &-prev {
+            font-size: 1rem;
+            background: v.$third-color;
+            padding: 1.5rem;
+            border: 2px solid v.$second-color;
+            border-radius: 100%;
+            color: v.$first-color;
+            cursor: pointer;
+            transition: all .2s;
+            transform: rotate3d(2, -5, -1, -30deg);
+            box-shadow: 10px 5px 3px #585858;
+            &:hover {
+                box-shadow: 0px 0px 0px #58585800;
+                transform: rotate3d(2, -5, -1, 0deg);
+                transition: 0.5s;
+            }
+            &:active {
+                transform: scale(0.9);
+                transition: 0.1s;
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (min-width: 576px) {
+    .hero_carousel {
+        margin-top: 7rem;   
+        &_container {
+            .prev-item {
+                position: absolute;
+                transform: scale(0.8) translateX(130px) rotate3d(2, -5, -1, -15deg);
+                opacity: 0.8;
+                filter: grayscale(0.25);
+            }
+            .active-item {
+                position: relative;
+                opacity: 1;
+                z-index: 2;
+            }
+            .next-item {
+                transform: scale(0.8) translateX(-130px) rotate3d(2, -5, -1, -15deg);
+            }
+        }
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0 0.5rem;
+            &-next {
+                font-size: 1.2rem;
+            }
+    
+            &-prev {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .hero_carousel {
+       flex: 1;
+       margin-top: 5rem;
+    
+        &_container {
+            width: fit-content;
+            height: fit-content;
+        }
+        .prev-item {
+            transform: scale(0.8) translateX(120px) rotate3d(2, -5, -1, -15deg);;
+        }
+        .next-item {
+            position: absolute;
+            transform: scale(0.8) translateX(-120px) rotate3d(2, -5, -1, -15deg);;
+        }
+    }
+    // Penser à augmenter la height du carousel en desktop pour afficher de plus grandes cartes
+}
+
+.loader-wrapper {
+    width: 100px;
+    height: 100px;
+    img {
+        width: 100%;
+        color: #b0b;
+    }
+}

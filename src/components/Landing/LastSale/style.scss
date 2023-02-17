@@ -1,0 +1,128 @@
+@use 'src/styles/vars' as v;
+
+.wave-wrapper {
+    margin-bottom: -0.4rem;
+    width: 100%;
+    padding: 0;
+}
+
+.wave-bottom {
+    margin-top: -0.4rem;
+    width: 100%;
+    padding: 0;
+}
+
+.last {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$second-color;
+    padding: 0 0 4rem;
+    gap: 3rem;
+
+    &_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10rem;
+
+
+        @media screen and (min-width: 320px) { 
+            padding: 0 2rem;
+        }
+
+        &-title {
+            font-size: 3rem;
+            font-weight: 600;
+            padding: 1rem;
+            
+            .sale-span{
+                background-color: v.$third-color;
+                padding-right: 1rem;
+                padding-left: 0.5rem;
+            }
+        }
+        &-options {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 4rem;
+
+            &-box{
+                width: 100px !important;
+            }
+
+            &-seeall{
+                background-color: v.$third-color;
+                color: v.$first-color;
+                padding: 0.9rem;
+                font-size: 1rem;
+                font-weight: 600;
+                border: 0;
+                border-radius: 1rem;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &_not-available p {
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid #ffffff;
+        padding: 1rem;
+        margin: 0 auto;
+        color: #000000;
+        background: #ffffff;
+    }
+}
+
+@media screen and (max-width: 992px) { 
+    .last {
+        &_header{ 
+            padding: 0 6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .last {
+        &_header { 
+            padding: 0 4rem;
+            &-title {
+                font-size: 3rem;
+            }
+    
+            &-options {
+                gap: 2rem;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: 576px) { 
+    .last {
+        &_header {
+            padding: 0 2rem;
+            &-title {
+                font-size: 3rem;
+            }
+            &-options {
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    .last {
+        &_header {
+            padding: 0 1rem;
+            &-title {
+                font-size: 2rem;
+            }
+            &-options {
+                gap: 0.5rem;
+            }
+        }
+    }
+}
