@@ -11,7 +11,7 @@ function SaleCarouselItem({ item, isDesktop }) {
                 className={`last_carousel_container-item 
                 last_carousel_container cardlast`}>
                 <Link to={`/artwork/${item.id}`}>
-                    <img src={`/assets/nft/${item.image}`}
+                    <img src={item.image}
                         alt="Artwork from Brushizer collection"
                         className='card-artwork'
                     ></img>
@@ -45,7 +45,7 @@ function SaleCarouselItem({ item, isDesktop }) {
             </div >
             :
             <div className={`last_carousel_container-item`}>
-                <Link to={`/artwork/${item.id}`}>
+                <Link to={item.id}>
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/nft/${item.image}`}
                         alt="Artwork from Brushizer collection">

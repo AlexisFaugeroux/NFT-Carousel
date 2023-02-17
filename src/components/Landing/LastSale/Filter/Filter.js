@@ -37,7 +37,7 @@ const Filter = (props) => {
     return(
         <div className="last_header">
         <div className='last_header-title'>
-            <h3>Last <span className='sale-span'>Sale</span></h3>
+            <h3>Brushizer <span className='sale-span'>Collection</span></h3>
         </div>
         <div className='last_header-options'>
             <Dropdown
