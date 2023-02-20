@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 import './style.scss'
 
-function SaleCarouselItem({ item, isDesktop }) {
+function SaleCarouselItem({ price, item, isDesktop }) {
+    const price_usd = price * 26.8; // Conversion rate on Feb 23
     return (
-        isDesktop && isDesktop ? // Check if client is on desktop, change carousel Item depending
+        isDesktop && isDesktop ? ( // Check if client is on desktop, change carousel Item depending
             // Ici le HTML pour la card desktop
             <div
                 className={`last_carousel_container-item 
@@ -22,14 +23,14 @@ function SaleCarouselItem({ item, isDesktop }) {
                         </div>
                         <div className='card_infos_lower'>
                             <div className='card_infos_lower-prices'>
-                                <p className='card_infos_lower-prices-text'>Last sale</p>
+                                <p className='card_infos_lower-prices-text'>{item.description}</p>
                                 <p className='card_infos_lower-prices-crypto'>
                                     <img src={`/assets/logos/solanaLogoMark.svg`}
                                         alt='Solana logo'
                                         className='solana-logo'
                                     />
-                                    {item.price_sol}</p>
-                                <p className='card_infos_lower-prices-currency'>$ {item.price_usd}</p>
+                                    {price}</p>
+                                <p className='card_infos_lower-prices-currency'>$ {price_usd}</p>
                             </div>
                             <div className='card_infos_lower-market'>
                                 <p className='card_infos_lower-market-text'>
@@ -43,7 +44,7 @@ function SaleCarouselItem({ item, isDesktop }) {
                     </div>
                 </Link>
             </div >
-            :
+            ) : (
             <div className={`last_carousel_container-item`}>
                 <Link to={item.id}>
                     <img
@@ -51,7 +52,7 @@ function SaleCarouselItem({ item, isDesktop }) {
                         alt="Artwork from Brushizer collection">
                     </img>
                 </Link>
-            </div>
+            </div>)
     );
 }
 

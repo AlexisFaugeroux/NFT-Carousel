@@ -15,9 +15,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
+const SaleCarousel = ({ price, items, isAvailable, isDesktop, isLoading }) => {
     let lastSaleAnim = useRef(null);
-
+    console.log(items);
     useEffect(() => {
 
         const lastReveal = lastSaleAnim.current;
@@ -77,7 +77,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
             >
                 {items.map((item, index) => (
                     <SwiperSlide key={index} className='swiper'>
-                        <SaleCarouselItem item={item} isDesktop={isDesktop} className='card-sale' />
+                        <SaleCarouselItem price={price} item={item} isDesktop={isDesktop} isLoading={isLoading} className='card-sale' />
                     </SwiperSlide>
                 ))}
             </Swiper>

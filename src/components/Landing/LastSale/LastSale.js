@@ -11,19 +11,10 @@ import mediaQuery from './MediaQuery/MediaQuery';
 import axios from 'axios';
 
 function LastSale() {
-    // const [filteredArtworks, setFilteredArtworks] = useState([...artworks]);
-    // const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
-
-    // const setArtworks = (Artworks) => {
-    //     setFilteredArtworks(Artworks);
-    // };
-
-    // const setAvailable = (isAvailable) => {
-    //     setIsAvailableArtworks(isAvailable);
-    // };
-
+    const [price, setPrice] = useState(0);
     const [filteredArtworks, setFilteredArtworks] = useState([]);
     const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
+    const [isLoading, setLoading] = useState(true)
 
     const setArtworks = (Artworks) => {
         setFilteredArtworks(Artworks);
@@ -35,22 +26,26 @@ function LastSale() {
 
     useEffect(() => {
         async function fetchArtwokrs() {
+            setLoading(true);
             try {
                 const config = {
                     headers: {
                         'Content-type': 'application/json',
                     }
                 };
-                const response = await axios.post('http://localhost:5000/owner', {
-                    pubKey: "356UHUNCRzR9mN2jDFwUTaopjdUcaFP6owtybMkuHWFo"
+                const response = await axios.post('http://localhost:5000/candymachine', {
+                    pubKey: "GT6RfZrZLgvEZmf1jLAwQGgABDAZDvuUKEQBj8p38FB4"
                     },
                     config
                 )
-                console.log(response.data.data);
-                
-                setFilteredArtworks(response.data.data);
+                console.log(response.data.data.price.basisPoints);
+                setPrice(response.data.data.price.basisPoints);
+                setFilteredArtworks(response.data.data.items);
             } catch (error) {
                 console.log(error);
+            }
+            finally {
+                setLoading(false);
             }
         };
         fetchArtwokrs();
@@ -67,9 +62,16 @@ function LastSale() {
                     onSetAvailable={
                         setAvailable
                     }
-            /> {
+            />
+            {isLoading && <div className="loader-wrapper">
+                <img src='/assets/loader.svg' alt='Loader spinning' />
+            </div>}
+             {
             /* Available for this Date */} {
                     <SaleCarousel
+                        price={
+                            price
+                        }
                         items={
                             filteredArtworks
                         }
@@ -78,6 +80,9 @@ function LastSale() {
                         }
                         isDesktop={
                             mediaQuery('(min-width: 1200px)')
+                        }
+                        isLoading={
+                            isLoading
                         }
                     />
                 } {
