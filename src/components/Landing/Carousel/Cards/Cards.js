@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import './style.scss';
 
-import SaleCarouselItem from '../../../Landing/LastSale/SaleCarousel/SaleCarouselItem/SaleCarouselItem';
+import CardItem from './CardItem/CardItem';
 
 import { useEffect, useRef } from 'react';
 
@@ -15,7 +15,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
-const SaleCarousel = ({ price_sol, items, isAvailable, isDesktop, isLoading }) => {
+const Cards = ({ price_sol, items, isDesktop, isLoading }) => {
     let lastSaleAnim = useRef(null);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const SaleCarousel = ({ price_sol, items, isAvailable, isDesktop, isLoading }) =
     }, []);
 
     return (
-        <div ref={lastSaleAnim} className={`carousel_wrapper ${isAvailable ? 'available' : 'not-available'}`}>
+        <div ref={lastSaleAnim} className="carousel_wrapper">
             {/* <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button> */}
             <Swiper
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
@@ -77,7 +77,7 @@ const SaleCarousel = ({ price_sol, items, isAvailable, isDesktop, isLoading }) =
             >
                 {items.map((item, index) => (
                     <SwiperSlide key={index} className='swiper'>
-                        <SaleCarouselItem price_sol={price_sol} item={item} isDesktop={isDesktop} isLoading={isLoading} className='card-sale' />
+                        <CardItem price_sol={price_sol} item={item} isDesktop={isDesktop} isLoading={isLoading} className='card' />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -86,5 +86,5 @@ const SaleCarousel = ({ price_sol, items, isAvailable, isDesktop, isLoading }) =
     );
 }
 
-export default SaleCarousel;
+export default Cards;
 

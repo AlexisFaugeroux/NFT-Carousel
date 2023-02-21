@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import './style.scss'
 
-function SaleCarouselItem({ price_sol, item, isDesktop }) {
+function CardItem({ price_sol, item, isDesktop }) {
     const price_usd = price_sol * 26.8; // Conversion rate on Feb 23
     return (
         isDesktop && isDesktop ? ( // Check if client is on desktop, change carousel Item depending
             // Ici le HTML pour la card desktop
             <div
-                className={`last_carousel_container-item 
-                last_carousel_container cardlast`}>
+                className={`carousel_container-item 
+                carousel_container cardlast`}>
                 <Link to={`/artwork/${item.id}`}>
                     <img src={item.image}
                         alt="Artwork from Brushizer collection"
@@ -45,7 +45,7 @@ function SaleCarouselItem({ price_sol, item, isDesktop }) {
                 </Link>
             </div >
             ) : (
-            <div className={`last_carousel_container-item`}>
+            <div className={`carousel_container-item`}>
                 <Link to={item.id}>
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/nft/${item.image}`}
@@ -56,9 +56,9 @@ function SaleCarouselItem({ price_sol, item, isDesktop }) {
     );
 }
 
-SaleCarouselItem.propTypes = {
+CardItem.propTypes = {
     price_sol: PropTypes.number.isRequired,
     isDesktop: PropTypes.bool.isRequired,
 };
 
-export default SaleCarouselItem;
+export default CardItem;

@@ -1,4 +1,4 @@
-# NFT Caroussel
+# NFT Carousel
 
 This project fetches a few NFTs from Brushizer collection that I have created on solana devnet and display them into a caroussel.
 
@@ -20,3 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### `npm build`
+
+Builds the app for production to the build folder.

@@ -4,25 +4,14 @@ import {
     useEffect,
     useState
 } from 'react';
-import SaleCarousel from './SaleCarousel/SaleCarousel';
-import Filter from './Filter/Filter';
-// import artworks from '../../../data/artworks.json';
+import Cards from './Cards/Cards';
 import mediaQuery from './MediaQuery/MediaQuery';
 import axios from 'axios';
 
-function LastSale() {
+function Carousel() {
     const [price_sol, setPrice] = useState(0);
-    const [filteredArtworks, setFilteredArtworks] = useState([]);
-    const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
+    const [nfts, setNfts] = useState([]);
     const [isLoading, setLoading] = useState(true)
-
-    const setArtworks = (Artworks) => {
-        setFilteredArtworks(Artworks);
-    };
-
-    const setAvailable = (isAvailable) => {
-        setIsAvailableArtworks(isAvailable);
-    };
 
     useEffect(() => {
         async function fetchArtwokrs() {
@@ -39,7 +28,7 @@ function LastSale() {
                     config
                 )
                 setPrice(response.data.data.price.basisPoints);
-                setFilteredArtworks(response.data.data.items);
+                setNfts(response.data.data.items);
             } catch (error) {
                 console.log(error);
             }
@@ -53,29 +42,23 @@ function LastSale() {
     return (
         <Fragment >
  
-        <section className='last'> {
-            /* Filter - Artworks */} 
-            <Filter onSetArtworks={
-                        setArtworks
-                    }
-                    onSetAvailable={
-                        setAvailable
-                    }
-            />
+        <section className='last'>
+            <div className="last_header">
+                <div className='last_header-title'>
+                    <h3>Brushizer <span className='sale-span'>Collection</span></h3>
+                </div>
+            </div>
             {isLoading && <div className="loader-wrapper">
                 <img src='/assets/loader.svg' alt='Loader spinning' />
             </div>}
              {
             /* Available for this Date */} {
-                    <SaleCarousel
+                    <Cards
                         price_sol={
                             price_sol
                         }
                         items={
-                            filteredArtworks
-                        }
-                        isAvailable={
-                            isAvailableArtworks
+                            nfts
                         }
                         isDesktop={
                             mediaQuery('(min-width: 1200px)')
@@ -84,13 +67,7 @@ function LastSale() {
                             isLoading
                         }
                     />
-                } {
-            /* Not Available for this Date */} {
-                    !isAvailableArtworks &&
-                    <div className='ui grid container last_not-available'>
-                        <p className='eight wide'> Aucun Artworks Vendues pour cette Période </p> 
-                    </div>
-        }
+                }
         </section>
         <div className="wave-bottom" >
             <img src="/assets/wave-small-bottom.svg" alt="Wave" />
@@ -99,4 +76,4 @@ function LastSale() {
                             );
 }
 
-export default LastSale;
+export default Carousel;

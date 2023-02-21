@@ -1,8 +1,7 @@
 @use 'src/styles/vars' as v;
 
-.last_carousel_container-item {
+.carousel_container-item {
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -18,14 +17,14 @@
 }
 
 @media screen and (min-width: 576px) {
-    .last_carousel_container-item {
+    .carousel_container-item {
         width: 350px;
         height: 350px;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .last_carousel_container-item {
+    .carousel_container-item {
         box-shadow: none;
         img {
             box-shadow: 2px 4px 8px #585858;
@@ -36,14 +35,14 @@
 
 
 @media screen and (min-width: 768px) {
-    .last_carousel_container-item {
+    .carousel_container-item {
         width: 400px;
         height: 400px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .last_carousel_container-item {
+    .carousel_container-item {
         width: 300px;
         height: 300px;
     }
@@ -54,7 +53,7 @@
     .swiper {
         padding: 2rem 0 !important;
     
-    .last_carousel_container-item {
+    .carousel_container-item {
         margin: auto;
         height: 100%;
         transform: scale(0.9);

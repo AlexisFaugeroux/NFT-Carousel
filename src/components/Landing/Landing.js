@@ -1,12 +1,12 @@
 import './style.scss'
 
-import LastSale from './LastSale/LastSale';
+import Carousel from './Carousel/Carousel';
 
 function Landing() {    
     
     return (
         <main className='main'>
-            <LastSale />
+            <Carousel />
         </main>
     );
 }
