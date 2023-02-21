@@ -11,7 +11,62 @@
     &-content {
         mask-image: linear-gradient(to right, transparent, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, transparent);
     }
+    &-buttons-container{
+        display: flex;
+        justify-content: space-between;
+    }
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0 0.5rem;
+            &-next {
+                font-size: 1rem;
+                background: v.$third-color;
+                padding: 1.5rem;
+                border: 2px solid v.$second-color;
+                border-radius: 100%;
+                color: v.$first-color;
+                cursor: pointer;
+                transition: all .2s;
+                transform: rotate3d(2, -5, -1, -30deg);
+                box-shadow: 10px 5px 3px #585858;
+                &:hover {
+                    box-shadow: 0px 0px 0px #58585800;
+                    transform: rotate3d(2, -5, -1, 0deg);
+                    transition: 0.5s;
+                }
+                &:active {
+                    transform: scale(0.9);
+                    transition: 0.1s;
+                }
+            }
+
+            &-prev {
+                font-size: 1rem;
+                background: v.$third-color;
+                padding: 1.5rem;
+                border: 2px solid v.$second-color;
+                border-radius: 100%;
+                color: v.$first-color;
+                cursor: pointer;
+                transition: all .2s;
+                transform: rotate3d(2, -5, -1, -30deg);
+                box-shadow: 10px 5px 3px #585858;
+                &:hover {
+                    box-shadow: 0px 0px 0px #58585800;
+                    transform: rotate3d(2, -5, -1, 0deg);
+                    transition: 0.5s;
+                }
+                &:active {
+                    transform: scale(0.9);
+                    transition: 0.1s;
+                }
+            }
+    }    
 }
+
+
 
 .loader-wrapper {
     width: 100px;

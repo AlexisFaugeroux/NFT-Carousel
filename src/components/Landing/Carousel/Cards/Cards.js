@@ -9,6 +9,7 @@ import './style.scss';
 import CardItem from './CardItem/CardItem';
 
 import { useEffect, useRef } from 'react';
+import { Icon } from 'semantic-ui-react';
 
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -42,7 +43,10 @@ const Cards = ({ price_sol, items, isDesktop, isLoading }) => {
 
     return (
         <div ref={lastSaleAnim} className="carousel_wrapper">
-            {/* <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button> */}
+            <div className='carousel_wrapper-buttons-container'>
+                <button className='carousel_wrapper-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button>
+                <button className='carousel_wrapper-buttons-next btn-right'><Icon size='large' name="chevron right" /></button>
+            </div>
             <Swiper
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
                 navigation={{
@@ -81,7 +85,6 @@ const Cards = ({ price_sol, items, isDesktop, isLoading }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            {/* <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button> */}
         </div >
     );
 }

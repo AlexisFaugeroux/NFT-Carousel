@@ -45,7 +45,7 @@ function Carousel() {
         <section className='last'>
             <div className="last_header">
                 <div className='last_header-title'>
-                    <h3>Brushizer <span className='sale-span'>Collection</span></h3>
+                    <h3>NFTs <span className='sale-span'>Carousel</span></h3>
                 </div>
             </div>
             {isLoading && <div className="loader-wrapper">

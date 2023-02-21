@@ -19,7 +19,7 @@ function CardItem({ price_sol, item, isDesktop }) {
                     <div className='card_infos'>
                         {/* Bloc des informations de la card */}
                         <div className='card_infos_upper'>
-                            <span className='card_infos_upper-id'>{item.name}</span>
+                            <span className='card_infos_upper-id'>Brushizer {item.name}</span>
                         </div>
                         <div className='card_infos_lower'>
                             <div className='card_infos_lower-prices'>
