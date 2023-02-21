@@ -22,18 +22,7 @@ function App() {
 
         {/* ARTWORK DETAIL PAGE */}
         {/* <Route path='/artwork/:id' element={<Artwork />} /> */}
-
-        {/* 404 */}
-        <Route path='*' element=
-          {
-            <>
-              {/* <Header /> */}
-              {/* <NotFound404 /> */}
-              {/* <Footer /> */}
-            </>
-          }
-        />
-
+        
       </Routes>
     </div>
   );
