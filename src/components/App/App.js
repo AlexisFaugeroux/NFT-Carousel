@@ -7,21 +7,6 @@ import { Route, Routes } from 'react-router-dom';
 /* Components */
 // import Header from '../Header/Header';
 import Landing from '../Landing/Landing';
-// import SignUp from '../SignUp/SignUp';
-// import SignIn from '../SignIn/SignIn';
-// import Footer from '../Footer/Footer';
-// import Profile from '../Profile/Profile';
-// import Artwork from '../Artwork/Artwork';
-// import Artists from '../Artists/Artists'
-// import Collections from '../Collections/Collections';
-// import Collection from '../Collections/Collection/Collection';
-// import Convertor from '../Convertor/Convertor'
-// import Charity from '../Charity/Charity';
-// import Contact from '../Contact/Contact';
-// import Protected from '../Admin/Protected/Protected';
-// import NotFound404 from '../NotFound404/NotFound404';
-// import RoadMap from '../RoadMap/RoadMap';
-// import Search from '../Search/Search';
 
 function App() {
 

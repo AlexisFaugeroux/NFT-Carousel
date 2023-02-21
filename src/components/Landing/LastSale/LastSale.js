@@ -11,7 +11,7 @@ import mediaQuery from './MediaQuery/MediaQuery';
 import axios from 'axios';
 
 function LastSale() {
-    const [price, setPrice] = useState(0);
+    const [price_sol, setPrice] = useState(0);
     const [filteredArtworks, setFilteredArtworks] = useState([]);
     const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
     const [isLoading, setLoading] = useState(true)
@@ -38,7 +38,6 @@ function LastSale() {
                     },
                     config
                 )
-                console.log(response.data.data.price.basisPoints);
                 setPrice(response.data.data.price.basisPoints);
                 setFilteredArtworks(response.data.data.items);
             } catch (error) {
@@ -69,8 +68,8 @@ function LastSale() {
              {
             /* Available for this Date */} {
                     <SaleCarousel
-                        price={
-                            price
+                        price_sol={
+                            price_sol
                         }
                         items={
                             filteredArtworks

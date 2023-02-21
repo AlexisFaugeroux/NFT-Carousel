@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import './style.scss'
 
-function SaleCarouselItem({ price, item, isDesktop }) {
-    const price_usd = price * 26.8; // Conversion rate on Feb 23
+function SaleCarouselItem({ price_sol, item, isDesktop }) {
+    const price_usd = price_sol * 26.8; // Conversion rate on Feb 23
     return (
         isDesktop && isDesktop ? ( // Check if client is on desktop, change carousel Item depending
             // Ici le HTML pour la card desktop
@@ -29,7 +29,7 @@ function SaleCarouselItem({ price, item, isDesktop }) {
                                         alt='Solana logo'
                                         className='solana-logo'
                                     />
-                                    {price}</p>
+                                    {price_sol}</p>
                                 <p className='card_infos_lower-prices-currency'>$ {price_usd}</p>
                             </div>
                             <div className='card_infos_lower-market'>
@@ -57,7 +57,7 @@ function SaleCarouselItem({ price, item, isDesktop }) {
 }
 
 SaleCarouselItem.propTypes = {
-    itemPos: PropTypes.string,
+    price_sol: PropTypes.number.isRequired,
     isDesktop: PropTypes.bool.isRequired,
 };
 
