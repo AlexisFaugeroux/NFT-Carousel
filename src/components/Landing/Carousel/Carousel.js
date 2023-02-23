@@ -6,7 +6,6 @@ import {
 } from 'react';
 import Cards from './Cards/Cards';
 import mediaQuery from './MediaQuery/MediaQuery';
-import axios from 'axios';
 
 function Carousel() {
     const [price_sol, setPrice] = useState(0);
@@ -17,15 +16,16 @@ function Carousel() {
         async function fetchArtwokrs() {
             setLoading(true);
             try {
-                const config = {
+                const response = await fetch('http://localhost:5000/candymachine', {
+                    method: "POST",
                     headers: {
-                        'Content-type': 'application/json',
-                    }
-                };
-                const response = await axios.post('http://localhost:5000/candymachine', {
-                    pubKey: "GT6RfZrZLgvEZmf1jLAwQGgABDAZDvuUKEQBj8p38FB4"
+                        "Accept": "application/json",
+                        "Content-Type": "application/json",
+                        },
+                    body: JSON.stringify({
+                        pubKey: "GT6RfZrZLgvEZmf1jLAwQGgABDAZDvuUKEQBj8p38FB4",
+                        }),
                     },
-                    config
                 )
                 setPrice(response.data.data.price.basisPoints);
                 setNfts(response.data.data.items);
