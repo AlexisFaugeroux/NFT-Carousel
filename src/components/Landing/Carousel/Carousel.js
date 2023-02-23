@@ -16,7 +16,7 @@ function Carousel() {
         async function fetchArtwokrs() {
             setLoading(true);
             try {
-                const response = await fetch('https://nftcarousel.onrender.com/candymachine', {
+                const response = await fetch('http://localhost:5000/candymachine', {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
@@ -27,8 +27,10 @@ function Carousel() {
                         }),
                     },
                 )
-                setPrice(response.data.data.price.basisPoints);
-                setNfts(response.data.data.items);
+                const responseJSON = await response.json();
+                    console.log(responseJSON);
+                setPrice(responseJSON.data.price.basisPoints);
+                setNfts(responseJSON.data.items);
             } catch (error) {
                 console.log(error);
             }
