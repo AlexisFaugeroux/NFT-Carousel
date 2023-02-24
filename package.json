@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@metaplex-foundation/js": "^0.18.1",
     "@react-hooks-library/core": "^0.4.1",
     "@reduxjs/toolkit": "^1.9.1",
+    "@solana/web3.js": "^1.73.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -25,9 +27,7 @@
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
     "swiper": "^8.4.5",
-    "web-vitals": "^2.1.0",
-    "@metaplex-foundation/js": "^0.18.1",
-    "@solana/web3.js": "^1.73.2"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
