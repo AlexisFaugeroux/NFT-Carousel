@@ -17,7 +17,7 @@
     padding: 0;
 }
 
-.last {
+.carousel {
     display: flex;
     flex-direction: column;
     background-color: v.$second-color;
@@ -30,6 +30,15 @@
         justify-content: space-between;
         padding: 0 10rem;
 
+        &-subtitle {
+            margin-top: 1rem;
+            font-size: 1rem;
+            }
+            
+            .API-link {
+                text-decoration: underline;
+                font-style: italic;
+            }
 
         @media screen and (min-width: 320px) { 
             padding: 0 2rem;
@@ -40,7 +49,7 @@
             font-weight: 600;
             padding: 1rem;
             
-            .sale-span{
+            .carousel-span{
                 background-color: v.$third-color;
                 padding-right: 1rem;
                 padding-left: 0.5rem;
@@ -82,7 +91,7 @@
 }
 
 @media screen and (max-width: 992px) { 
-    .last {
+    .carousel {
         &_header{ 
             padding: 0 6rem;
         }
@@ -90,7 +99,7 @@
 }
 
 @media screen and (max-width: 768px) { 
-    .last {
+    .carousel {
         &_header { 
             padding: 0 4rem;
             &-title {
@@ -105,7 +114,7 @@
 }
 
 @media screen and (max-width: 576px) { 
-    .last {
+    .carousel {
         &_header {
             padding: 0 2rem;
             &-title {
@@ -119,7 +128,7 @@
 }
 
 @media screen and (max-width: 400px) { 
-    .last {
+    .carousel {
         &_header {
             padding: 0 1rem;
             &-title {
