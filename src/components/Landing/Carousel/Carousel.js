@@ -48,7 +48,7 @@ function Carousel() {
             <div className="carousel_header">
                 <div className='carousel_header-title'>
                     <h3>NFT <span className='carousel-span'>Carousel</span></h3>
-                    <h4 className='carousel_header-subtitle'>Sample of a few NFTs from Brushizer Collection. Metadata dipslayed on the cards are being fetched from Solana devnet through this custom <a href='https://github.com/AlexisFaugeroux/NFT-Carousel-Backend' className='API-link'>API</a>.</h4>
+                    <h4 className='carousel_header-subtitle'>Sample of a few NFTs from Brushizer Collection. Metadata displayed on the cards are being fetched from Solana devnet through this custom <a href='https://github.com/AlexisFaugeroux/NFT-Carousel-Backend' className='API-link'>API</a>.</h4>
                 </div>
             </div>
             {isLoading && <div className="loader-wrapper">
